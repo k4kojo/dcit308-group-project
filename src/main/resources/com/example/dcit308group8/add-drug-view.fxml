@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="400.0" spacing="10.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dcit308group8.scene_controller.AddDrugViewController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Enter New Drug Information">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="115.0" text="Drug Name:" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+              <TextField fx:id="drugNameField" prefHeight="38.0" prefWidth="313.0" promptText="Drug Name" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="115.0" text="Drug Code:">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+              <TextField fx:id="drugCodeField" prefHeight="38.0" prefWidth="313.0" promptText="Code" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="115.0" text="Description:">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+              <TextField fx:id="drugDescriptionField" prefHeight="38.0" prefWidth="313.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="199.0" prefHeight="60.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="115.0" text="Price:">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="drugPriceField" prefHeight="38.0" prefWidth="313.0" promptText="Price" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="312.0" prefHeight="60.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="115.0" text="Quantity:" textAlignment="RIGHT">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="drugQuantityField" prefHeight="38.0" prefWidth="313.0" promptText="Quantity" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="381.0" prefHeight="60.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="195.0" text="Manufacture Date:">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="drugManufactureDateField" prefHeight="38.0" prefWidth="313.0" promptText="DD/MM/YYYY">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="340.0" prefHeight="60.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="195.0" text="Expiry Date:">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="drugExpiryDateField" prefHeight="38.0" prefWidth="313.0" promptText="DD/MM/YYYY">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="442.0" prefHeight="60.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="195.0" text="Supplier Name:">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="supplierNameField" prefHeight="38.0" prefWidth="313.0" promptText="Supplier Name">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="30.0" layoutY="548.0" prefHeight="60.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="38.0" prefWidth="195.0" text="Supplier Location:">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="supplierLocationField" prefHeight="38.0" prefWidth="313.0" promptText="Supplier Location">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="140.0">
+         <children>
+              <Button fx:id="save_btn" onAction="#handleSaveDrug" prefHeight="80.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/check.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="cancel_btn" layoutX="140.0" layoutY="14.0" onAction="#handleCancelDrug" prefHeight="80.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+    </children>
+</VBox>

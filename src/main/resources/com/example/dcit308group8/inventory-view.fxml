@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dcit308group8.scene_controller.InventoryViewController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="search_drug_field" prefHeight="34.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="123.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="search_btn" alignment="CENTER" mnemonicParsing="false" onAction="#handleSearchDrug" prefHeight="34.0" prefWidth="64.0" text="Search" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="290.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="addDrug_btn" mnemonicParsing="false" onAction="#handleAddNewDrug" prefHeight="34.0" text="Add New Drug" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets left="5.0" />
+         </VBox.margin>
+      </HBox>
+
+      <!-- Replace TextArea with TableView -->
+      <TableView fx:id="drugTableView" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="35.0" text="ID" />
+            <TableColumn fx:id="nameColumn" prefWidth="120.0" text="Name" />
+            <TableColumn fx:id="codeColumn" prefWidth="50.0" text="Code" />
+            <TableColumn fx:id="descriptionColumn" prefWidth="160.0" text="Description" />
+            <TableColumn fx:id="priceColumn" prefWidth="55.0" text="Price" />
+            <TableColumn fx:id="initQuantityColumn" prefWidth="60.0" text="Init Qty" />
+            <TableColumn fx:id="currentQuantityColumn" prefWidth="60.0" text="In Stock" />
+            <TableColumn fx:id="manDateColumn" prefWidth="70.0" text="Man Date" />
+            <TableColumn fx:id="expDateColumn" prefWidth="70.0" text="Exp Date" />
+            <TableColumn fx:id="supplierNameColumn" prefWidth="100.0" text="Supplier Name" />
+            <TableColumn fx:id="supplierLocationColumn" prefWidth="100.0" text="Supplier Loc." />
+         </columns>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </TableView>
+
+      <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="return_btn" mnemonicParsing="false" onAction="#onDashboardViewController" prefHeight="80.0" prefWidth="100.0">
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/human.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
