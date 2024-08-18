@@ -87,7 +87,7 @@ public class InventoryViewController implements Initializable {
     private void handleAddNewDrug(ActionEvent event) {
         try {
             // Load the FXML file for the pop-up
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/dcit308group8/scenes/add-drug-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/dcit308group8/add-drug-view.fxml"));
             Parent parent = fxmlLoader.load();
 
             // Create a new stage for the pop-up window
