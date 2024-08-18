@@ -1,4 +1,4 @@
-package com.example.dcit308group8.pharmacy2_db;
+package com.example.dcit308group8.pharmacy_db;
 
 import com.example.dcit308group8.Drug;
 import com.example.dcit308group8.SupplierLinkedList;
@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/pharmacy2_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/pharmacy_db";
     private static final String USER = "root";
     private static final String PASSWORD = ""; // Replace with your MySQL root password
 

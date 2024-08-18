@@ -1,6 +1,6 @@
 package com.example.dcit308group8.scene_controller;
 
-import com.example.dcit308group8.pharmacy2_db.DatabaseConnection;
+import com.example.dcit308group8.pharmacy_db.DatabaseConnection;
 import com.example.dcit308group8.Drug;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

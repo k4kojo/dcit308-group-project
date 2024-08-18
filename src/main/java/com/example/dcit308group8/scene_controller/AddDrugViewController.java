@@ -2,7 +2,7 @@
 
 package com.example.dcit308group8.scene_controller;
 
-import com.example.dcit308group8.pharmacy2_db.DatabaseConnection;
+import com.example.dcit308group8.pharmacy_db.DatabaseConnection;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
