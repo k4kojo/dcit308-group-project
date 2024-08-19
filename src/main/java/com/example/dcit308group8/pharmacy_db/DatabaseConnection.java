@@ -26,7 +26,7 @@ public class DatabaseConnection {
     }
 
     public void saveDrug(String name, String code, String description, double price, int initQuantity, int currentQuantity, String manufactureDate, String expiryDate, String supplierName, String supplierLocation) {
-        String sql = "INSERT INTO drugs (drug_name, drug_code, description, price, qty_purchased, qty_in_stock, manDate, expDate, supplier_name, supplier_location) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO drugs (Name, Code, Description, Price, Init Qty, In Stock, Man Date, Exp Date, Supplier Name, Supplier Loc) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -90,21 +90,39 @@ public class DatabaseConnection {
     }
 
     private Drug createDrugFromResultSet(ResultSet rs) throws SQLException {
-        String name = rs.getString("drug_name");
-        String code = rs.getString("drug_code");
-        String description = rs.getString("description");
-        double price = rs.getDouble("price");
-        int initQuantity = rs.getInt("qty_purchased");
-        int currentQuantity = rs.getInt("qty_in_stock");
-        String manDate = rs.getString("manDate");
-        String expDate = rs.getString("expDate");
-        String supplierName = rs.getString("supplier_name");
-        String supplierLocation = rs.getString("supplier_location");
+        String name = rs.getString("Name");
+        String code = rs.getString("Code");
+        String description = rs.getString("Description");
+        double price = rs.getDouble("Price");
+        int initQuantity = rs.getInt("Init Qty");
+        int currentQuantity = rs.getInt("In Stock");
+        String manDate = rs.getString("Man Date");
+        String expDate = rs.getString("Exp Date");
+        String supplierName = rs.getString("Supplier Name");
+        String supplierLocation = rs.getString("Supplier Loc.");
 
         // Since suppliers are embedded in the drug table, include them directly
         SupplierLinkedList suppliers = new SupplierLinkedList();
         suppliers.addSupplier(supplierName, supplierLocation);
 
         return new Drug(name, code, description, price, manDate, expDate, initQuantity, currentQuantity, suppliers);
+    }
+
+    public static void updateStockQuantity(String drugCode, int quantitySold) {
+        String query = "UPDATE drugs SET in_stock = in_stock - ? WHERE drug_code = ?";
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setInt(1, quantitySold);
+            statement.setString(2, drugCode);
+            int rowsAffected = statement.executeUpdate();
+
+            if (rowsAffected == 0) {
+                throw new SQLException("Updating stock quantity failed, no rows affected.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle exceptions
+        }
     }
 }

@@ -97,6 +97,8 @@ public class InventoryViewController implements Initializable {
             stage.setScene(new Scene(parent));
             stage.showAndWait(); // Show the pop-up and wait for it to close
 
+            loadAllDrugs();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,3 @@
-// File: src/main/java/com/example/dcit308group8/scene_controller/AddDrugViewController.java
-
 package com.example.dcit308group8.scene_controller;
 
 import com.example.dcit308group8.pharmacy_db.DatabaseConnection;
@@ -23,7 +21,7 @@ public class AddDrugViewController {
         String description = drugDescriptionField.getText();
         double price = Double.parseDouble(drugPriceField.getText());
         int initQuantity = Integer.parseInt(drugQuantityField.getText());
-        int currentQuantity = Integer.parseInt(null);
+        int currentQuantity = initQuantity;
         String manufactureDate = drugManufactureDateField.getText();
         String expiryDate = drugExpiryDateField.getText();
         String supplierName = supplierNameField.getText();
@@ -33,7 +31,7 @@ public class AddDrugViewController {
         dbConnection.saveDrug(name, code, description, price, initQuantity, currentQuantity, manufactureDate, expiryDate, supplierName, supplierLocation);
 
         // Close the pop-up window after saving
-        Stage stage = (Stage) drugNameField.getScene().getWindow();
+        Stage stage = (Stage) save_btn.getScene().getWindow();
         stage.close();
     }
 
